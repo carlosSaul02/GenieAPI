@@ -206,7 +206,7 @@ def main():
     es_valida = validar_contrasena(contrasena)
     if "True" in es_valida:
         print("La contraseña es válida.")
-        cambiar_contrasena_por_id(device_id, contrasena, ip_servidor, puerto_servidor)
+        #cambiar_contrasena_por_id(device_id, contrasena, ip_servidor, puerto_servidor)
     else:
         print("La contraseña no es válida:", es_valida["False"])
 
