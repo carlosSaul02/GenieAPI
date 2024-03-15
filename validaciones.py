@@ -29,10 +29,6 @@ def validar_ssid(ssid):
     if len(ssid) > 30:
         return {"False": "El SSID debe tener un maximo de 30 caracteres."}
     
-    # Verificar si el SSID tiene espacios en blanco
-    if ' ' in ssid:
-        return {"False": "El SSID no puede contener espacios en blanco."}
-    
     return {"True": "SSID válido."}
 
 
