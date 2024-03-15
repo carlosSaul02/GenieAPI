@@ -216,13 +216,13 @@ def main():
 
 
     #************************** Insertar Tag
-    #tag = "prueba"
-    #es_valida2 = validar_tag(tag)
-    #if "True" in es_valida2:
-    #    print("El Tag es válido.")
-    #    insertar_tag(device_id, ip_servidor, puerto_servidor, tag)
-    #else:
-    #    print("El Tag no es válido:", es_valida2["False"])
+    tag = "prueba"
+    es_valida2 = validar_tag(tag)
+    if "True" in es_valida2:
+        print("El Tag es válido.")
+        insertar_tag(device_id, ip_servidor, puerto_servidor, tag)
+    else:
+        print("El Tag no es válido:", es_valida2["False"])
     
     
     
