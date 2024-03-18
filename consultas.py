@@ -117,3 +117,47 @@ def obtener_informacion_dispositivo(device_id, ip_servidor, puerto_servidor):
     except (requests.exceptions.RequestException, KeyError) as e:
         print(f"Error al hacer la solicitud a la API: {e}")
         return None
+    
+
+
+
+
+
+def refrescar_dispositivo(device_id, ip_servidor, puerto_servidor):
+    url = f'http://{ip_servidor}:{puerto_servidor}/devices/{device_id}/tasks?connection_request'
+    headers = {
+        'Content-Type': 'application/json'
+    }
+    data = {
+        'name': 'refreshObject',
+        'objectName': ''
+    }
+    print("Refrescando Dispositivo...")
+    try:
+        response = requests.post(url, headers=headers, json=data)
+        response.raise_for_status()  # Verificar si hay errores en la respuesta
+
+        # Imprimir la respuesta
+        print("Parametros actualizados!")
+        #print(response.text)
+               
+
+    except requests.exceptions.RequestException as e:
+        print("Error al hacer la consulta:", e)
+        return None
+    
+
+def reiniciar_dispositivo(device_id, ip_servidor, puerto_servidor):
+    url = f'http://{ip_servidor}:{puerto_servidor}/devices/{device_id}/tasks?timeout=3000&connection_request'
+    payload = {"name": "reboot"}
+    
+    try:
+        response = requests.post(url, json=payload)
+        if response.status_code == 200:
+            print("Exito! Dispositivo reiniciado.")
+        else:
+            print(f"Error al reiniciar dispositivo. Código de estado: {response.status_code}")
+            return None
+    except requests.exceptions.RequestException as e:
+        print(f"Error de conexión: {e}")
+        return None
