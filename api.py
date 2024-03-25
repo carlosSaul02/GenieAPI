@@ -17,11 +17,14 @@ def main():
     #************************** Obtener informacion general del dispositivo
     #obtener_informacion_dispositivo(device_id, ip_servidor, puerto_servidor)
 
+
     #************************** Refrescar los parametros del dispositivo
     #refrescar_dispositivo(device_id, ip_servidor, puerto_servidor)
 
+
     #************************** Reiniciar Dispositivo
-    #reiniciar_dispositivo(device_id, ip_servidor, puerto_servidor)
+    reiniciar_dispositivo(device_id, ip_servidor, puerto_servidor)
+
 
     #************************** Cambiar el SSID del dispositivo usando su ID
     #ssid = "PRUEBA"
@@ -45,13 +48,13 @@ def main():
 
 
     #************************** Insertar Tag
-    tag = "Provisional1"
-    es_valida2 = validar_tag(tag)
-    if "True" in es_valida2:
-        print("El Tag es válido.")
-        insertar_tag(device_id, ip_servidor, puerto_servidor, tag)
-    else:
-        print("El Tag no es válido:", es_valida2["False"])
+    #tag = "Provisional1"
+    #es_valida2 = validar_tag(tag)
+    #if "True" in es_valida2:
+    #    print("El Tag es válido.")
+    #    insertar_tag(device_id, ip_servidor, puerto_servidor, tag)
+    #else:
+    #    print("El Tag no es válido:", es_valida2["False"])
     
     
     

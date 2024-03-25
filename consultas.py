@@ -122,7 +122,6 @@ def obtener_informacion_dispositivo(device_id, ip_servidor, puerto_servidor):
 
 
 
-
 def refrescar_dispositivo(device_id, ip_servidor, puerto_servidor):
     url = f'http://{ip_servidor}:{puerto_servidor}/devices/{device_id}/tasks?connection_request'
     headers = {
@@ -138,7 +137,7 @@ def refrescar_dispositivo(device_id, ip_servidor, puerto_servidor):
         response.raise_for_status()  # Verificar si hay errores en la respuesta
 
         # Imprimir la respuesta
-        print("Parametros actualizados!")
+        print("Parametros actualizados!!")
         #print(response.text)
                
 
